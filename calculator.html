@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<style>
+		button{
+			height: 100px;
+			width: 100px;
+			background-color: lightgreen;
+			border-radius: 35%;
+			}
+		#result{
+			height: 100px;
+			width: 410px;
+			background-color: gold;
+			color: black;
+			border-radius: 80px;
+		}
+		button:hover{
+			background-color: pink;
+			color: black;
+			cursor: pointer;
+			border-radius: 80px;
+		}
+        body{
+        	background-image:url(js.jpg);
+        	height: 100%;
+        	width: 100%;
+        }
+	</style>
+</head>
+<body><center>
+	<h1>CALCULATOR</h1>
+	<input type="text" id="result" placeholder="0">
+	<table>
+		<tr>
+			<td><button onclick="display('7')">7</button></td>
+			<td><button onclick="display('8')">8</button></td>
+			<td><button onclick="display('9')">9</button></td>
+			<td><button onclick="display('+')">+</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="display('4')">4</button></td>
+			<td><button onclick="display('5')">5</button></td>
+			<td><button onclick="display('6')">6</button></td>
+			<td><button onclick="display('-')">-</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="display('1')">1</button></td>
+			<td><button onclick="display('2')">2</button></td>
+			<td><button onclick="display('3')">3</button></td>
+			<td><button onclick="display('*')">*</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="display('0')">0</button></td>
+			<td><button onclick="clr('C')">C</button></td>
+			<td><button onclick="calculate('=')">=</button></td>
+			<td><button onclick="display('/')">/</button></td>
+		</tr>
+	</table>
+</body></center>
+<script>
+    let output=document.getElementById("result");
+    function display(num)
+    {
+    output.value+=num;
+    }
+   function calculate(){
+    try{
+        output.value=eval(output.value);
+       }
+    catch(err){
+    	alert("Invalid");
+    	output.value="";
+    }
+    }
+    function clr(){
+    	output.value='';
+    }
+</script>
+</html>
